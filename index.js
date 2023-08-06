@@ -17,24 +17,29 @@ if (a===0) {
 else {
     var delta=(b^2)-4*a*c
     if (delta===0){
-        return "x1=x2=-b/(2*a)"
+        const x= -b/(2*a);
+        return " 1 nghiem: x= "+ x
     }
     else if (delta>0){
-        return "x1=, x2="
+        var x1= (-b+Math.sqrt(delta))/(2*a);
+        var x2= (-b-Math.sqrt(delta))/(2*a);
+        return "2 nghiem x1= "+ x1+ ", x2= "+ x2;
     }
     else {
         return "vo nghiem"
     }
 }
 }    
-var a=document.querySelector(".a").value
-console.log("a")
-var b=document.querySelector(".b").value
-var c=document.querySelector(".c").value
-var btn=document.querySelector(".btn")
-var id=document.querySelector("#result")
-id.textContent=""
-console.log("id")
-btn.addEventListener("click",function(kq){
-    console.log("")
-})
+function onBtnSolveClick(){
+    var a = parseFloat(inputA.value)
+    var b = parseFloat(inputB.value)
+    var c= parseFloat(inputC.value)
+    var nghiem= ptbh(a,b,c)
+    resultView.innerText= nghiem
+}
+var inputA= document.querySelector("#a")
+var inputB= document.querySelector("#b")
+var inputC= document.querySelector("#c")
+var btn= document.querySelector("button")
+btn.addEventListener("click", onBtnSolveClick)
+var resultView= document.querySelector("#result")
