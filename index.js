@@ -28,6 +28,7 @@ else {
 }
 }    
 var a=document.querySelector(".a").value
+console.log("a")
 var b=document.querySelector(".b").value
 var c=document.querySelector(".c").value
 var btn=document.querySelector(".btn")
